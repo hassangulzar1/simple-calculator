@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>calculator</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body
+    class="h-screen w-screen bg-gradient-to-b from-[#404D5E] to-[#3A4655] flex align-middle"
+  >
+    <div
+      class="calculator lg:w-1/4 md:w-3/5 sm:w-3/5 w-4/5 mx-auto my-auto bg-[#3A4655]"
+    >
+      <div class="row">
+        <input
+          type="text"
+          class="bg-[#3A4655] w-full text-7xl font-bold text-slate-200 py-8 px-10"
+          id="inputField"
+          readonly
+        />
+      </div>
+      <div class="row grid grid-cols-4">
+        <!-- !Button Clear  -->
+        <button
+          class="text-[#D95D4E] px-5 py-10 text-5xl bg-[#404D5E] border-2 border-[#3C4857] hover:bg-yellow-500 hover:text-white hover:ease duration-300 hover:rotate-3 hover:border-yellow-500"
+          onclick="clearfunc()"
+        >
+          C
+        </button>
+        <!-- !Button backDelete  -->
+        <button
+          class="text-gray-300 px-5 py-10 text-5xl bg-[#404D5E] border-2 border-[#3C4857] hover:bg-yellow-500 hover:text-white hover:ease duration-300 hover:rotate-3 hover:border-yellow-500"
+          onclick="removeOne()"
+        >
+          <i class="fa-solid fa-delete-left"></i>
+        </button>
+        <!-- !Button %  -->
+        <button
+          class="text-gray-300 px-5 py-10 text-5xl bg-[#404D5E] border-2 border-[#3C4857] hover:bg-yellow-500 hover:text-white hover:ease duration-300 hover:rotate-3 hover:border-yellow-500"
+          onclick="insertValue('%')"
+        >
+          %
+        </button>
+        <!-- !Button /  -->
+        <button
+          class="text-gray-300 px-5 py-10 text-5xl bg-[#404D5E] border-2 border-[#3C4857] hover:bg-yellow-500 hover:text-white hover:ease duration-300 hover:rotate-3 hover:border-yellow-500"
+          onclick="insertValue('/')"
+        >
+          /
+        </button>
+        <!-- !Button 1  -->
+        <button
+          class="text-white px-5 py-10 text-5xl bg-[#404D5E] border-2 border-[#3C4857] hover:bg-yellow-500 hover:text-white hover:ease duration-300 hover:rotate-3 hover:border-yellow-500"
+          onclick="insertValue(1)"
+        >
+          1
+        </button>
+        <!-- !Button 2  -->
+        <button
+          class="text-white px-5 py-10 text-5xl bg-[#404D5E] border-2 border-[#3C4857] hover:bg-yellow-500 hover:text-white hover:ease duration-300 hover:rotate-3 hover:border-yellow-500"
+          onclick="insertValue(2)"
+        >
+          2
+        </button>
+        <!-- !Button 3  -->
+        <button
+          class="text-white px-5 py-10 text-5xl bg-[#404D5E] border-2 border-[#3C4857] hover:bg-yellow-500 hover:text-white hover:ease duration-300 hover:rotate-3 hover:border-yellow-500"
+          onclick="insertValue(3)"
+        >
+          3
+        </button>
+        <!-- !Button +  -->
+        <button
+          class="text-gray-300 px-5 py-10 text-5xl bg-[#404D5E] border-2 border-[#3C4857] hover:bg-yellow-500 hover:text-white hover:ease duration-300 hover:rotate-3 hover:border-yellow-500"
+          onclick="insertValue('+')"
+        >
+          +
+        </button>
+        <!-- !Button 4  -->
+        <button
+          class="text-white px-5 py-10 text-5xl bg-[#404D5E] border-2 border-[#3C4857] hover:bg-yellow-500 hover:text-white hover:ease duration-300 hover:rotate-3 hover:border-yellow-500"
+          onclick="insertValue(4)"
+        >
+          4
+        </button>
+        <!-- !Button 5 -->
+        <button
+          class="text-white px-5 py-10 text-5xl bg-[#404D5E] border-2 border-[#3C4857] hover:bg-yellow-500 hover:text-white hover:ease duration-300 hover:rotate-3 hover:border-yellow-500"
+          onclick="insertValue(5)"
+        >
+          5
+        </button>
+        <!-- !Button 6  -->
+        <button
+          class="text-white px-5 py-10 text-5xl bg-[#404D5E] border-2 border-[#3C4857] hover:bg-yellow-500 hover:text-white hover:ease duration-300 hover:rotate-3 hover:border-yellow-500"
+          onclick="insertValue(6)"
+        >
+          6
+        </button>
+        <!-- !Button -  -->
+        <button
+          class="text-gray-300 px-5 py-10 text-5xl bg-[#404D5E] border-2 border-[#3C4857] hover:bg-yellow-500 hover:text-white hover:ease duration-300 hover:rotate-3 hover:border-yellow-500"
+          onclick="insertValue('-')"
+        >
+          -
+        </button>
+        <!-- !Button 7  -->
+        <button
+          class="text-white px-5 py-10 text-5xl bg-[#404D5E] border-2 border-[#3C4857] hover:bg-yellow-500 hover:text-white hover:ease duration-300 hover:rotate-3 hover:border-yellow-500"
+          onclick="insertValue(7)"
+        >
+          7
+        </button>
+        <!-- !Button 8  -->
+        <button
+          class="text-white px-5 py-10 text-5xl bg-[#404D5E] border-2 border-[#3C4857] hover:bg-yellow-500 hover:text-white hover:ease duration-300 hover:rotate-3 hover:border-yellow-500"
+          onclick="insertValue(8)"
+        >
+          8
+        </button>
+        <!-- !Button 9  -->
+        <button
+          class="text-white px-5 py-10 text-5xl bg-[#404D5E] border-2 border-[#3C4857] hover:bg-yellow-500 hover:text-white hover:ease duration-300 hover:rotate-3 hover:border-yellow-500"
+          onclick="insertValue(9)"
+        >
+          9
+        </button>
+        <!-- !Button * -->
+        <button
+          class="text-gray-300 px-5 py-10 text-5xl bg-[#404D5E] border-2 border-[#3C4857] hover:bg-yellow-500 hover:text-white hover:ease duration-300 hover:rotate-3 hover:border-yellow-500"
+          onclick="insertValue('*')"
+        >
+          *
+        </button>
+        <!-- !Button 00  -->
+        <button
+          class="text-gray-300 px-5 py-10 text-5xl bg-[#404D5E] border-2 border-[#3C4857] hover:bg-yellow-500 hover:text-white hover:ease duration-300 hover:rotate-3 hover:border-yellow-500"
+          onclick="insertValue('00')"
+        >
+          00
+        </button>
+        <!-- !Button 0  -->
+        <button
+          class="text-white px-5 py-10 text-5xl bg-[#404D5E] border-2 border-[#3C4857] hover:bg-yellow-500 hover:text-white hover:ease duration-300 hover:rotate-3 hover:border-yellow-500"
+          onclick="insertValue(0)"
+        >
+          0
+        </button>
+        <!-- !Button .  -->
+        <button
+          class="text-gray-300 px-5 py-10 text-5xl bg-[#404D5E] border-2 border-[#3C4857] hover:bg-yellow-500 hover:text-white hover:ease duration-300 hover:rotate-3 hover:border-yellow-500"
+          onclick="insertValue('.')"
+        >
+          .
+        </button>
+        <!-- !Button =  -->
+        <button
+          class="text-green-400 px-5 py-10 text-5xl bg-[#404D5E] border-2 border-[#3C4857] hover:bg-yellow-500 hover:text-white hover:ease duration-300 hover:rotate-3 hover:border-yellow-500"
+          onclick="evalueate()"
+        >
+          =
+        </button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
